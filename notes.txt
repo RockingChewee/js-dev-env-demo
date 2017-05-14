@@ -1484,52 +1484,55 @@ Appendix A
 ==================
 
 * Courses to consider:
-  https://app.pluralsight.com/library/courses/javascript-development-environment (2016-10-10, 5h 19m) Environment: VSCode (IDE), npm, Express (webserver), npm Scripts (transformation), Babel (transpiling), Webpack (bundler),
+  https://app.pluralsight.com/library/courses/javascript-development-environment (2016-10-10, 5h 19m)
+  Environment: VSCode (IDE), npm, Express (webserver), npm Scripts (transformation), Babel (transpiling), Webpack (bundler),
   https://app.pluralsight.com/library/courses/writing-clean-code-humans/table-of-contents
   https://app.pluralsight.com/library/courses/javascript-fundamentals-es6 (2014-09-17, 4h 51m)
-  https://app.pluralsight.com/library/courses/react-flux-building-applications (2015-08-13, 5h 8m) Environment: Node, Browserify (bundles all css and js into a single file), Gulp (scheduler + webserver, handles jsx transformation, Sass and Less, listens for changes), Bootstrap (styling), ESLint (analyse the code for potential errors and conventions breach)
+  https://app.pluralsight.com/library/courses/react-flux-building-applications (2015-08-13, 5h 8m)
+  Environment: Node, Browserify (bundles all css and js into a single file), Gulp (scheduler + webserver, handles jsx transformation, Sass and Less, listens for changes),
+               Bootstrap (styling), ESLint (analyse the code for potential errors and conventions breach)
   https://app.pluralsight.com/library/courses/react-redux-react-router-es6 (2016-05-20, 6h 13m)
 
+* ECMAScript - a specification for implementation of JavaScript engines: ES5 (released 2009), ES6 (alternative name ES2015), ES2016
+  https://bytearcher.com/articles/es6-vs-es2015-name/
+  https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/
 
-ECMAScript - a specification for implementation of JavaScript engines: ES5 (released 2009), ES6 (alternative name ES2015), ES2016
-https://bytearcher.com/articles/es6-vs-es2015-name/
-https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/
+* Chrome V8 JavaScript engine
+  https://developers.google.com/v8/
 
-Chrome V8 JavaScript engine
-https://developers.google.com/v8/
+* npm - Node Package Manager, the package manager for JavaScript.
+  http://stackoverflow.com/questions/31930370/what-is-npm-and-why-do-i-need-it
+  https://www.sitepoint.com/beginners-guide-node-package-manager/
 
-npm - Node Package Manager, the package manager for JavaScript.
-http://stackoverflow.com/questions/31930370/what-is-npm-and-why-do-i-need-it
-https://www.sitepoint.com/beginners-guide-node-package-manager/
+* CommonJS is an API to define modules that use the following conventions:
+  - Every file defines a module and is executed in an isolated environment ; that is to say that the variables it defines won't be available from outside the module.
+  - To allow importing other modules, a global variable require is made available to the module, allowing it to import other modules
+  - In the same way, the variable module is made available to the module so that it can set its exports attribute to define what should be exported by your module;
+    the value you set for module.exports in your module a.js is exactly what require('./a') will return.
 
-CommonJS is an API to define modules that use the following conventions:
-* Every file defines a module and is executed in an isolated environment ; that is to say that the variables it defines won't be available from outside the module.
-* To allow importing other modules, a global variable require is made available to the module, allowing it to import other modules
-* In the same way, the variable module is made available to the module so that it can set its exports attribute to define what should be exported by your module ; the value you set for module.exports in your module a.js is exactly what require('./a') will return.
+* Babel = JSX + ES6 (ECMAScript2015)
+  https://babeljs.io/
+  https://babeljs.io/docs/plugins/ - info on presets
+  Babel has the JSX included. Also got a transpile top ES5.
 
-Babel = JSX + ES6 (ECMAScript2015)
-https://babeljs.io/
-https://babeljs.io/docs/plugins/ - info on presets
-Babel has the JSX included. Also got a transpile top ES5.
+* JSX
+  JSX is a XML-like syntax extension to ECMAScript without any defined semantics. It's NOT intended to be implemented by engines or browsers.
+  It's NOT a proposal to incorporate JSX into the ECMAScript spec itself.
+  It's intended to be used by various preprocessors (transpilers) to transform these tokens into standard ECMAScript.
+  https://facebook.github.io/jsx/
+  https://facebook.github.io/react/docs/jsx-in-depth.html
+  How to inject? Either to add JSXTranformer.js script, either use Babel.
 
-JSX
-JSX is a XML-like syntax extension to ECMAScript without any defined semantics. It's NOT intended to be implemented by engines or browsers.
-It's NOT a proposal to incorporate JSX into the ECMAScript spec itself.
-It's intended to be used by various preprocessors (transpilers) to transform these tokens into standard ECMAScript.
-https://facebook.github.io/jsx/
-https://facebook.github.io/react/docs/jsx-in-depth.html
-How to inject? Either to add JSXTranformer.js script, either use Babel.
+* ES6
+  ES6 are partially supported by all most popular browsers, but for now it is best to use Babel.
+  https://app.pluralsight.com/player?course=javascript-fundamentals-es6
 
-ES6
-ES6 are partially supported by all most popular browsers, but for now it is best to use Babel.
-https://app.pluralsight.com/player?course=javascript-fundamentals-es6
+* React
+  https://facebook.github.io/react/docs/installation.html
 
-React
-https://facebook.github.io/react/docs/installation.html
+* FLUX - specification
+  Redux (2015) - a library and is most popular implementation of the FLUX
 
-FLUX - specification
-Redux (2015) - a library and is most popular implementation of the FLUX
+* Linting - analysing the code for potential errors (sonar)
 
-Linting - analysing the code for potential errors (sonar)
-
-CDN - content delivery network, hosts files to include
+* CDN - content delivery network, hosts files to include
