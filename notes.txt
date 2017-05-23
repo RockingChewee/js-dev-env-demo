@@ -158,9 +158,26 @@ trim_trailing_whitespace = false
   Note: If there is a same package installed both locally and globally, using the npm scripts the local one is picked.
         This works because node.js adds the local ./node_modules/.bin directory to the PATH temporarily during script execution.
 
-* npm packages use CommonJS packaging format.
+* CommonJS package pattern:
+  - Node uses the CommonJS pattern for referencing and exporting modules.
+  - Target is to encapsulate the JavaScript into a reusable module that can be referenced by other modules
+  - Usage:
+
+    //1. Get reference to dependency
+    var dependency = require('path/to/file');
+
+    //2. Declare module
+    var MyModule = {
+      //main module code here...
+    }
+
+    //3. Expose to others
+    module.exports = MyModule;
 
 * Most important npm commands:
+
+  - Generate the package.json file:
+    >npm init
 
   - Install everything that is specified in the package.json:
     >npm install
