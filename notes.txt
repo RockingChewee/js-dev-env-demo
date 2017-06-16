@@ -106,17 +106,11 @@ Note: remote = remote repository. Stuff that's on your hard drive is local. Stuf
 
   - Either setting user (VSCode-win32-1.12.1\userdata\User\settings.json) or workspace (.\js-dev-env-demo\.vscode\settings.json) VSCode settings:
 
-    ~ To use cmd:
-
-      "git.path": "C:\\Tools\\PortableGit\\bin\\git.exe",
-      "terminal.integrated.shell.windows": "C:\\Windows\\sysnative\\cmd.exe",
-      "terminal.integrated.shellArgs.windows": ["/k path C:\\Tools\\PortableGit\\bin;C:\\Tools\\JavaScript\\node-v6.10.0-win-x64;C:\\Tools\\heroku\\bin;%PATH%"]
-
-    ~ To use bash:
-
-      "git.path": "C:\\Tools\\PortableGit\\bin\\git.exe",
-      "terminal.integrated.shell.windows": "C:\\Windows\\sysnative\\cmd.exe",
-      "terminal.integrated.shellArgs.windows": ["/k path C:\\Tools\\PortableGit\\bin;C:\\Tools\\JavaScript\\node-v6.10.0-win-x64;C:\\Tools\\heroku\\bin;%PATH% & C:\\Tools\\PortableGit\\bin\\bash.exe"]
+    "git.path": "C:\\Tools\\PortableGit\\bin\\git.exe",
+    "terminal.integrated.shell.windows": "C:\\Windows\\sysnative\\cmd.exe",
+    "terminal.integrated.shellArgs.windows": [
+        "/k path C:\\Tools\\PortableGit\\bin;C:\\Tools\\JavaScript\\node-v6.10.0-win-x64;C:\\Tools\\heroku\\bin;%PATH% & set NODE_PATH=C:\\Tools\\JavaScript\\node-v6.10.0-win-x64\\node_modules; & C:\\Tools\\PortableGit\\bin\\bash.exe"
+    ],
 
 * The "EditorConfig for VS Code" must be installed and the following file placed in the project root:
 
@@ -160,7 +154,8 @@ trim_trailing_whitespace = false
 
 * CommonJS package pattern:
   - Node uses the CommonJS pattern for referencing and exporting modules.
-  - Target is to encapsulate the JavaScript into a reusable module that can be referenced by other modules
+  - Target is to encapsulate the JavaScript into a reusable module that can be referenced by other modules,
+    i.e. the MyModule variable from the example below is not actually global.
   - Usage:
 
     //1. Get reference to dependency
@@ -176,7 +171,7 @@ trim_trailing_whitespace = false
 
 * Most important npm commands:
 
-  - Generate the package.json file:
+  - Generate the package.json file in the current folder:
     >npm init
 
   - Install everything that is specified in the package.json:
