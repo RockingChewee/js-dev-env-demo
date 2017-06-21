@@ -57,8 +57,15 @@
   - Edit git configuration file:
     >git config --global --edit
     or alternatively use the following 2 commands:
-    > git config --global user.name "Aleksandr Fokin"
-    > git config --global user.email "aleksandr.fokin@gmail.com"
+    >git config --global user.name "Aleksandr Fokin"
+    >git config --global user.email "aleksandr.fokin@gmail.com"
+
+  - Redirecting git client to use another cert store for specific domains:
+	  >git config --global http."https://stash.danskenet.net/".sslCAInfo <downloaded certificate>.pem
+	  Another option - append the Root CA certificate to the end of the C:\Tools\PortableGit\mingw64\ssl\certs\ca-bundle.crt file
+
+  - To check the git config values (while in the project folder):
+    >git config --local --list
 
   - Fix the identity used for local commit:
     >git commit --amend --reset-author
