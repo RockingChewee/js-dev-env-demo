@@ -61,8 +61,8 @@
     >git config --global user.email "aleksandr.fokin@gmail.com"
 
   - Redirecting git client to use another cert store for specific domains:
-	  >git config --global http."https://stash.danskenet.net/".sslCAInfo <downloaded certificate>.pem
-	  Another option - append the Root CA certificate to the end of the C:\Tools\PortableGit\mingw64\ssl\certs\ca-bundle.crt file
+    >git config --global http."https://stash.danskenet.net/".sslCAInfo <downloaded certificate>.pem
+    Another option - append the Root CA certificate to the end of the C:\Tools\PortableGit\mingw64\ssl\certs\ca-bundle.crt file
 
   - To check the git config values (while in the project folder):
     >git config --local --list
@@ -107,19 +107,40 @@ Note: remote = remote repository. Stuff that's on your hard drive is local. Stuf
 
 * Upon opening VSCode the first time, the project directory must be selected.
 
-* The path to operating system command line,  git, node/npm and heroku executables must be resolved by:
+* Mandatory plugins to be installed:
+
+  - "EditorConfig for VS Code" - in order for the instructions in the .editorconfig file to be enforced.
+
+  - "vscode-icons" - in order to beautify file icons in VSCode file explorer.
+
+* The path to operating system command line, git, node/npm and heroku executables must be resolved by:
 
   - Either adding C:\Tools\PortableGit\bin;, C:\Tools\JavaScript\node-v6.10.0-win-x64; and C:\Tools\heroku\bin; to your PATH environment variable.
 
-  - Either setting user (VSCode-win32-1.12.1\userdata\User\settings.json) or workspace (.\js-dev-env-demo\.vscode\settings.json) VSCode settings:
+  - Either setting the integrated terminal bootstrap settings for user or workspace.
 
+
+VSCode-win32-1.12.1\userdata\User\settings.json (user settings) or .\js-dev-env-demo\.vscode\settings.json (workspace settings)
+----
+// Place your settings in this file to overwrite the default settings
+{
     "git.path": "C:\\Tools\\PortableGit\\bin\\git.exe",
+    "workbench.iconTheme": "vscode-icons",
+
+    // Uncomment to bootstrap cmd and run bash
+    /*
     "terminal.integrated.shell.windows": "C:\\Windows\\sysnative\\cmd.exe",
     "terminal.integrated.shellArgs.windows": [
         "/k path C:\\Tools\\PortableGit\\bin;C:\\Tools\\JavaScript\\node-v6.10.0-win-x64;C:\\Tools\\heroku\\bin;%PATH% & set NODE_PATH=C:\\Tools\\JavaScript\\node-v6.10.0-win-x64\\node_modules; & C:\\Tools\\PortableGit\\bin\\bash.exe"
     ],
+    */
 
-* The "EditorConfig for VS Code" must be installed and the following file placed in the project root:
+    // Uncomment to bootstrap and run bash
+    "terminal.integrated.shell.windows": "C:\\Tools\\PortableGit\\bin\\bash.exe",
+    "terminal.integrated.shellArgs.windows": [
+        "-c", "export PATH=/C/Tools/PortableGit/bin:/C/Tools/JavaScript/node-v6.10.0-win-x64:/C/Tools/heroku/bin:$PATH;export NODE_PATH=/C/Tools/JavaScript/node-v6.10.0-win-x64/node_modules;bash"
+    ]
+}
 
 
 .editorconfig - root
