@@ -84,6 +84,13 @@
     or alternatively
     >git push origin master
 
+  - Clone the specific commit
+    >git clone $URL
+    >cd $PROJECT_NAME
+    >git reset --hard $SHA1
+    To again go back to the most recent commit
+    >git pull
+
 Note: remote = remote repository. Stuff that's on your hard drive is local. Stuff that's on GitHub's server is remote.
       origin = the default name of the remote repository on GitHub corresponding to the repo you're currently in on your machine.
       master = the default name of the initial branch of a repository. So, "origin master" is the default branch of your repository on GitHub.
@@ -101,9 +108,11 @@ Note: remote = remote repository. Stuff that's on your hard drive is local. Stuf
   C:\Users\BB6545\AppData\Roaming\Code
   C:\Users\BB6545\.vscode
 
-  The following shortcut params can be used to change that:
+  The --user-data-dir and --extensions-dir shortcut params can be used to change that:
 
-  C:\Tools\JavaScript\VSCode-win32-1.12.1\Code.exe --user-data-dir "userdata" --extensions-dir "ext"
+  C:\Tools\JavaScript\VSCode-win32-1.12.1\Code.exe --user-data-dir "userdata" --extensions-dir "ext" "../Projects/react-flux-building-applications"
+
+  Note: The last parameter is a path to the folder opened by default.
 
 * Upon opening VSCode the first time, the project directory must be selected.
 
