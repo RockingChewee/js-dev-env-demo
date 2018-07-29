@@ -9,7 +9,7 @@
     "lint:watch": "npm run lint -- --watch",
     "open:src": "babel-node buildScripts/srcServer.js",
     "security-check": "nsp check",
-    "localtunnel": "lt --port 3000 --subdomain rockingchewee",
+    "localtunnel": "lt --port 3000 --subdomain aleksf0",
     "share": "npm-run-all --parallel open:src localtunnel",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch",

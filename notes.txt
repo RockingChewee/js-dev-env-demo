@@ -45,12 +45,12 @@
   - Description: JavaScript development environment Pluralsight course by Cory House
   - Initialize with readme: check
   - Add .gitignore: Node
-  - Copy the repository url link from github by clicking "Clone or Download" button: https://github.com/RockingChewee/js-dev-env-demo.git
+  - Copy the repository url link from github by clicking "Clone or Download" button: https://github.com/aleksf0/js-dev-env-demo.git
 
 * Run git clone command in the folder that contains your project's root directory:
   >path c:\tools\PortableGit\bin;%PATH%
   >cd c:\tools\javascript\projects
-  >git clone https://github.com/RockingChewee/js-dev-env-demo.git
+  >git clone https://github.com/aleksf0/js-dev-env-demo.git
 
 * Main git commands:
 
@@ -147,7 +147,8 @@ VSCode-win32-1.12.1\userdata\User\settings.json (user settings) or .\js-dev-env-
     // Uncomment to bootstrap and run bash
     "terminal.integrated.shell.windows": "C:\\Tools\\PortableGit\\bin\\bash.exe",
     "terminal.integrated.shellArgs.windows": [
-        "-c", "export PATH=/C/Tools/PortableGit/bin:/C/Tools/JavaScript/node-v6.10.0-win-x64:/C/Tools/heroku/bin:$PATH;export NODE_PATH=/C/Tools/JavaScript/node-v6.10.0-win-x64/node_modules;bash"
+        "-c",
+        "export PATH=/C/Tools/PortableGit/bin:/C/Tools/PortableGit/usr/bin:/C/Tools/JavaScript/node-v6.10.0-win-x64:/C/Tools/heroku/bin:/C/Tools/OpenShift:$PATH;export NODE_PATH=/C/Tools/JavaScript/node-v6.10.0-win-x64/node_modules;export NODE_ENV=syst;export BABEL_ENV=production;export SASS_BINARY_PATH=${PWD}/mods/bin/node-sass/v4.5.2/win32-x64-48_binding.node;bash"
     ]
 }
 
@@ -345,7 +346,7 @@ index.html
 * Usage:
 
   >npm install -g localtunnel
-  >lt --port 3000 --subdomain rockingchewee
+  >lt --port 3000 --subdomain aleksf0
 
   The command above returns the url available publicly. Once the local server is stopped - localtunnel URL is also unavailable.
 
@@ -421,7 +422,7 @@ package.json
     "start": "npm-run-all --parallel security-check open:src",
     "open:src": "node buildScripts/srcServer.js",
     "security-check": "nsp check",
-    "localtunnel": "lt --port 3000 --subdomain rockingchewee",
+    "localtunnel": "lt --port 3000 --subdomain aleksf0",
     "share": "npm-run-all --parallel open:src localtunnel"
   },
   ...
@@ -1517,7 +1518,7 @@ new HtmlWebpackPlugin({
 
       Clone the forked repository by navigating to the folder that is to contain the project, execute the following git command and open the cloned folder in VSCode:
       >cd /C/Tools/JavaScript/Projects
-      >git clone https://github.com/RockingChewee/js-dev-env-demo-api.git
+      >git clone https://github.com/aleksf0/js-dev-env-demo-api.git
 
     ~ Install the dependencies from package.json if want to run it locally:
 
@@ -1537,7 +1538,7 @@ new HtmlWebpackPlugin({
       {
         "name": "Node API example",
         "description": "A simple API built in Node and Express hosted on Heroku",
-        "repository": "https://github.com/RockingChewee/js-dev-env-demo-api",
+        "repository": "https://github.com/aleksf0/js-dev-env-demo-api",
         "keywords": ["node", "express", "static"]
       }
 
@@ -1550,8 +1551,8 @@ new HtmlWebpackPlugin({
     ~ Check the git remotes currently registered with your repository:
 
       >git remote -v
-      origin  https://github.com/RockingChewee/js-dev-env-demo-api.git (fetch)
-      origin  https://github.com/RockingChewee/js-dev-env-demo-api.git (push)
+      origin  https://github.com/aleksf0/js-dev-env-demo-api.git (fetch)
+      origin  https://github.com/aleksf0/js-dev-env-demo-api.git (push)
 
     ~ Login to Heroku via CLI:
 
