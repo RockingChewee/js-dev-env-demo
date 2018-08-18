@@ -1,19 +1,19 @@
 # js-dev-env-demo
 JavaScript development environment Pluralsight course by Cory House
 
-Prerequisites
+Initial tooling setup
 ==================
-* Git client<br/>
+* __Git client__<br/>
   Download from: https://git-scm.com/download/win (cancel the auto-started download)<br/>
   Pick: _64-bit Git for Windows Portable_<br/>
   Extract to: _C:\Tools\PortableGit_<br/>
 
-* Node.js<br/>
+* __Node.js__<br/>
   Download from: https://nodejs.org/en/download/<br/>
   Pick: _Windows Binary (.zip) 64-bit_<br/>
   Extract to versioned folder: _C:\Tools\JavaScript\node-v6.12.0-win-x64_<br/>
 
-* VSCode<br/>
+* __VSCode__<br/>
   Download from: https://code.visualstudio.com/download<br/>
   Pick: _Windows .zip 64 bit_<br/>
   Extract to versioned folder: _C:\Tools\JavaScript\VSCode-win32-x64-1.26.0_<br/>
