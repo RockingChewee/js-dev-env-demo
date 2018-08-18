@@ -31,7 +31,7 @@ Initial tooling setup
   Extract to versioned folder: _C:\Tools\JavaScript\VSCode-win32-x64-1.26.0_<br/>
   - Create the project specific shortcut to __Code.exe__ by supplying options for _user-data_, _extensions_ and _project folder_:
 
-    `C:\Tools\JavaScript\VSCode-win32-x64-1.26.0\Code.exe --user-data-dir "userdata" --extensions-dir "ext" "../Projects/bpm-portal`
+    `C:\Tools\JavaScript\VSCode-win32-x64-1.26.0\Code.exe --user-data-dir "userdata" --extensions-dir "ext" "../Projects/bpm-portal"`
 
   - Launch the modified shortcut and download the following _extensions_ via VSCode interface:
     - _EditorConfig for VS Code_ - honors the instructions set at __.editorconfig__ file from the project root.
@@ -47,7 +47,7 @@ Initial tooling setup
       "terminal.integrated.shell.windows": "C:\\Tools\\PortableGit\\bin\\bash.exe",
       "terminal.integrated.shellArgs.windows": [
         "-c",
-        "export PATH=/C/Tools/PortableGit/bin:/C/Tools/PortableGit/usr/bin:/C/Tools/JavaScript/node-v6.12.0-win-x64:/C/Tools/heroku/bin:/C/Tools/OpenShift:$PATH;export http_proxy=http://<username:password>@proxy-w-app.danskenet.net:80;export https_proxy=http://<username:password>@proxy-w-app.danskenet.net:80;export NODE_PATH=/C/Tools/JavaScript/node-v6.12.0-win-x64/node_modules;export NODE_ENV=development;export BABEL_ENV=development;export DEPLOYMENT_VERSION=latest-commit;bash"
+        "export PATH=/C/Tools/PortableGit/bin:/C/Tools/PortableGit/usr/bin:/C/Tools/JavaScript/node-v6.12.0-win-x64:/C/Tools/heroku/bin:/C/Tools/OpenShift:$PATH;export http_proxy=http://<username:password>@proxy.corporate.org:80;export https_proxy=http://<username:password>@proxy.corporate.org:80;export NODE_PATH=/C/Tools/JavaScript/node-v6.12.0-win-x64/node_modules;export NODE_ENV=development;export BABEL_ENV=development;export DEPLOYMENT_VERSION=latest-commit;bash"
       ],
       "window.zoomLevel": 0
     }
@@ -68,26 +68,26 @@ Initial tooling setup
 Git repository access setup
 ==================
 * In corporate environment, in order to be able to access the local __Stash/BitBucket__ instance, the _Root CA_ certificate needs to be added into Git client truststore:
-  - Export the _Danske Bank Root CA_ certificate in __Base-64 encoded X.509__ format from https://stash.danskenet.net/.
+  - Export the _Corporate Root CA_ certificate in __Base-64 encoded X.509__ format from https://stash.corporate.org/.
   - Append it the captured certificate to the end of _C:/Tools/PortableGit/mingw64/ssl/certs/ca-bundle.crt_ file via any text editor.
 
 * Clone the wanted repository while in the projects root directory:
 
-  `git clone https://BB6545@stash.danskenet.net/scm/bpm/bpm-portal.git`
+  `git clone https://<username>@stash.corporate.org/scm/bpm/bpm-portal.git`
 
 * Navigate to the cloned project directory and execute the following commands to update the project specific git configuration:
   - __Alternative 1:__ For corporate projects with git repositories managed by the local Stash/BitBucket instance
     ```
-    git config --local user.name "Aleksandr Fokin"
-    git config --local user.email "...@danskebank.lt"
-    git config --local credential.username "BB6545"
+    git config --local user.name "<Name Lastname>"
+    git config --local user.email "<user-email>@corporate.org"
+    git config --local credential.username "<corporate-username>"
     ```
 
   - __Alternative 2:__ For public projects with git repositories managed by GitHub
     ```
-    git config --local user.name "Aleksandr Fokin"
-    git config --local user.email "...@gmail.com"
-    git config --local credential.username "aleksf0"
+    git config --local user.name "<Name Lastname>"
+    git config --local user.email "<user-email>@gmail.com"
+    git config --local credential.username "<github-username>"
     ```
 
 - Upon the first authentication, the credentials in both cases are saved in __Windows Credentials Manager__ and can be viewed at:
@@ -103,9 +103,8 @@ Create the __.npmrc__ file with the following contents in the project root:
 # Use the exact dependencies specified in package.json
 save-exact=true
 
-# Corporate specific npm module registry.
-# Comment-out for non-corporate projects.
-registry=http://artifactory.danskenet.net/artifactory/api/npm/joined-npm-build
+# Corporate specific npm module registry. Comment-out for non-corporate projects.
+registry=http://artifactory.corporate.org/artifactory/api/npm/joined-npm-build
 
 # Path to the local node-sass preprocessor binary used in development.
 # It is overridden by the environment variable in server environment.
