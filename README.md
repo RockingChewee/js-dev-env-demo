@@ -13,6 +13,18 @@ Initial tooling setup
   Pick: _Windows Binary (.zip) 64-bit_<br/>
   Extract to versioned folder: _C:\Tools\JavaScript\node-v6.12.0-win-x64_<br/>
 
+* __Heroku CLI__<br/>
+  Download from: https://devcenter.heroku.com/articles/heroku-cli<br/>
+  Pick: _Other installation methods / Tarballs / Windows (x64)_<br/>
+  Extract to: _C:\Tools\heroku_<br/>
+  > Extract the archive contents by running 7-zip as administrator. Otherwise the symbolic links won't be created.<br/>
+
+* __OpenShift CLI__<br/>
+  Download from: https://github.com/openshift/origin/releases<br/>
+  Pick: openshift-origin-client-tools-vX.XX.X-YYYYYYY-windows.zip<br/>
+  Extract to: _C:\Tools\OpenShift_<br/>
+  > More details on OpenShift CLI installation can be found here https://blog.openshift.com/installing-oc-tools-windows/<br/>
+
 * __VSCode__<br/>
   Download from: https://code.visualstudio.com/download<br/>
   Pick: _Windows .zip 64 bit_<br/>
@@ -41,17 +53,8 @@ Initial tooling setup
     }
     ```
 
-* __Heroku CLI__<br/>
-  Download from: https://devcenter.heroku.com/articles/heroku-cli<br/>
-  Pick: _Other installation methods / Tarballs / Windows (x64)_<br/>
-  Extract to: _C:\Tools\heroku_<br/>
-  > Extract the archive contents by running 7-zip as administrator. Otherwise the symbolic links won't be created.<br/>
-
-* __OpenShift CLI__<br/>
-  Download from: ...<br/>
-
 * __Test__<br/>
-  Launch the integrated terminal within VSCode (Ctrl+`) and execute the following commands to make sure all the tools are reachable:
+  Launch the integrated terminal within VSCode (_Ctrl+`_) and execute the following commands to make sure all the tools are reachable:
   ```
   git --version
   node -v
@@ -59,7 +62,7 @@ Initial tooling setup
   heroku -v
   oc version
   ```
-  > Corporate OpenShift shows an error after the line with the version, but this is expected.
+  > Corporate OpenShift instance may show an error after the line with the version, but this is expected.
 
 
 Git repository access setup
