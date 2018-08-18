@@ -41,6 +41,26 @@ Initial tooling setup
     }
     ```
 
+* __Heroku CLI__<br/>
+  Download from: https://devcenter.heroku.com/articles/heroku-cli<br/>
+  Pick: _Other installation methods / Tarballs / Windows (x64)_<br/>
+  Extract to: _C:\Tools\heroku_<br/>
+  > Extract the archive contents by running 7-zip as administrator. Otherwise the symbolic links won't be created.<br/>
+
+* __OpenShift CLI__<br/>
+  Download from: ...<br/>
+
+* __Test__<br/>
+  Launch the integrated terminal within VSCode (Ctrl+`) and execute the following commands to make sure all the tools are reachable:
+  ```
+  git --version
+  node -v
+  npm -v
+  heroku -v
+  oc version
+  ```
+  > Corporate OpenShift shows an error after the line with the version, but this is expected.
+
 
 Git repository access setup
 ==================
