@@ -21,7 +21,7 @@ Initial tooling setup
 
 * __OpenShift CLI__<br/>
   Download from: https://github.com/openshift/origin/releases<br/>
-  Pick: openshift-origin-client-tools-vX.XX.X-YYYYYYY-windows.zip<br/>
+  Pick: _openshift-origin-client-tools-vX.XX.X-YYYYYYY-windows.zip_<br/>
   Extract to: _C:\Tools\OpenShift_<br/>
   > More details on OpenShift CLI installation can be found here https://blog.openshift.com/installing-oc-tools-windows/<br/>
 
