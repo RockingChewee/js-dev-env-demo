@@ -3,20 +3,20 @@ JavaScript development environment Pluralsight course by Cory House
 
 Prerequisites
 ==================
-* Git client
-  Download from: https://git-scm.com/download/win (cancel the auto-started download)
-  Pick: _64-bit Git for Windows Portable_
-  Extract to: _C:\Tools\PortableGit_
+* Git client<br/>
+  Download from: https://git-scm.com/download/win (cancel the auto-started download)<br/>
+  Pick: _64-bit Git for Windows Portable_<br/>
+  Extract to: _C:\Tools\PortableGit_<br/>
 
-* Node.js
-  Download from: https://nodejs.org/en/download/
-  Pick: _Windows Binary (.zip) 64-bit_
-  Extract to versioned folder: _C:\Tools\JavaScript\node-v6.12.0-win-x64_
+* Node.js<br/>
+  Download from: https://nodejs.org/en/download/<br/>
+  Pick: _Windows Binary (.zip) 64-bit_<br/>
+  Extract to versioned folder: _C:\Tools\JavaScript\node-v6.12.0-win-x64_<br/>
 
-* VSCode
-  Download from: https://code.visualstudio.com/download
-  Pick: _Windows .zip 64 bit_
-  Extract to versioned folder: _C:\Tools\JavaScript\VSCode-win32-x64-1.26.0_
+* VSCode<br/>
+  Download from: https://code.visualstudio.com/download<br/>
+  Pick: _Windows .zip 64 bit_<br/>
+  Extract to versioned folder: _C:\Tools\JavaScript\VSCode-win32-x64-1.26.0_<br/>
   - Create the project specific shortcut to __Code.exe__ by supplying options for _user-data_, _extensions_ and _project folder_:
 
     `C:\Tools\JavaScript\VSCode-win32-x64-1.26.0\Code.exe --user-data-dir "userdata" --extensions-dir "ext" "../Projects/bpm-portal`
@@ -27,8 +27,7 @@ Prerequisites
     - _Log File Highlighter_ - adds color highlighting to log files to make it easier to follow the flow of log events and identify problems.
 
   - Paste the following _JSON_ to:
-  > VSCode &rightarrow; File &rightarrow; Preferences &rightarrow; Settings &rightarrow; User Settings:
-
+    > VSCode &rightarrow; File &rightarrow; Preferences &rightarrow; Settings &rightarrow; User Settings:
     ```
     {
       "git.path": "C:\\Tools\\PortableGit\\bin\\git.exe",
@@ -55,7 +54,6 @@ Git repository access setup
 
 * Navigate to the cloned project directory and execute the following commands to update the project specific git configuration:
   - __Alternative 1:__ For corporate projects with git repositories managed by the local Stash/BitBucket instance
-
     ```
     git config --local user.name "Aleksandr Fokin"
     git config --local user.email "...@danskebank.lt"
@@ -63,15 +61,15 @@ Git repository access setup
     ```
 
   - __Alternative 2:__ For public projects with git repositories managed by GitHub
-  ```
-  git config --local user.name "Aleksandr Fokin"
-  git config --local user.email "...@gmail.com"
-  git config --local credential.username "aleksf0"
-  ```
+    ```
+    git config --local user.name "Aleksandr Fokin"
+    git config --local user.email "...@gmail.com"
+    git config --local credential.username "aleksf0"
+    ```
 
 - Upon the first authentication, the credentials in both cases are saved in __Windows Credentials Manager__ and can be viewed at:
 
-  >Control Panel &rightarrow; User Accounts &rightarrow; Credential Manager &rightarrow; Windows Credentials &rightarrow; Generic Credentials
+  > Control Panel &rightarrow; User Accounts &rightarrow; Credential Manager &rightarrow; Windows Credentials &rightarrow; Generic Credentials
 
 
 Initial .npmrc configuration
@@ -82,9 +80,11 @@ Create the __.npmrc__ file with the following contents in the project root:
 # Use the exact dependencies specified in package.json
 save-exact=true
 
-# Corporate specific npm module registry. Comment-out for non-corporate projects.
+# Corporate specific npm module registry.
+# Comment-out for non-corporate projects.
 registry=http://artifactory.danskenet.net/artifactory/api/npm/joined-npm-build
 
-# Path to the local node-sass preprocessor binary used in development. It is overridden by the environment variable in server environment.
+# Path to the local node-sass preprocessor binary used in development.
+# It is overridden by the environment variable in server environment.
 SASS_BINARY_PATH=${PWD}/mods/bin/node-sass/v4.5.2/win32-x64-48_binding.node
 ```
